@@ -1,0 +1,114 @@
+\documentclass[a4paper,10pt]{article}
+
+% Paquetes requeridos
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage[style=apa, backend=biber, natbib=true, language=spanish, url=true]{biblatex}
+\usepackage{tocloft} % Para personalizar el índice
+\usepackage[left=3.5cm,right=2.5cm,top=3.5cm,bottom=3.8cm]{geometry}
+\usepackage{setspace} % Espaciado
+\usepackage{titlesec} % Para personalizar los títulos
+\usepackage{fancyhdr} % Para personalizar encabezados y pies de página
+\usepackage{newtxtext}
+
+\pagestyle{fancy}
+\fancyhf{} % Limpia encabezados y pies de página
+\renewcommand{\headrulewidth}{0pt} % Elimina la línea del encabezado
+
+\addbibresource{referencias.bib}
+\DeclareLanguageMapping{spanish}{spanish-apa}
+% Configuraciones
+\setlength{\parskip}{6pt} % Espacio entre párrafos
+\setstretch{1.15} % Espacio entre líneas
+
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % Para puntos en el índice
+
+% Estilos para títulos y subtítulos
+\titleformat{\section}
+{\normalfont\fontsize{12}{15}\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\fontsize{10}{13}\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\normalfont\fontsize{10.5}{13}\bfseries}{\thesubsubsection}{1em}{}
+
+\usepackage[hypertexnames=false, colorlinks=true, 
+linkcolor=blue, 
+citecolor=blue, 
+urlcolor=blue, 
+linkbordercolor={1 1 0}, 
+citebordercolor={1 1 0}, 
+urlbordercolor={1 1 0}, 
+filecolor=blue, 
+pdfborderstyle={/S/U/W 1}]{hyperref}
+
+% Inicio del documento
+\begin{document}
+	\pagestyle{empty}
+	% Carátula
+	\begin{titlepage}
+		\centering
+		\vspace*{1.5cm}
+		\includegraphics[width=0.3\textwidth]{unerlogo.png}
+		\linebreak
+		{\fontsize{14}{17}\bfseries Título del Documento\par}
+		{\small [Nombre del primer alumno]\par}
+		{\small [Nombre del segundo alumno]\par}
+		{\normalsize [Nombre de la Universidad]\par}
+		{\normalsize Facultad de [nombre de la facultad]\par}
+		{\normalsize Carrera de [nombre de la carrera]\par}
+		{\small Correo electrónico de autor\par}
+		{\small Correo electrónico de autor\par}
+		
+		% Resumen y palabras clave con un pequeño desplazamiento hacia la izquierda
+		\hspace{-5cm}{\small \textbf{Abstract.} Resumen hasta 200 palabras. \par}
+		\hspace{-5.2cm}{\small \textbf{Keywords:} Máximo 5 palabras claves.\par}
+	\end{titlepage}
+	
+	% Índice
+	\tableofcontents
+	\thispagestyle{empty}
+	\clearpage
+	% Índice de figuras
+	\listoffigures
+	\thispagestyle{empty}
+	\clearpage
+	
+	\section{Desarrollo de la actividad propuesta}
+	Aquí desarrollas el contenido principal del trabajo. \parencite{marquez2011metaversos}
+	
+	% Ejemplo de figura
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{uner.png}
+		\caption{Descripción de la figura}
+		\label{fig:ejemplo}
+	\end{figure}
+	
+	prueba springer  \cite{cheng2023metaverse}
+	
+	\section{Introducción}
+	Esta es la introducción de nuestro documento. Aquí discutimos brevemente el propósito de este trabajo y ofrecemos un panorama general de lo que se discutirá en las siguientes secciones.
+	
+	\subsection{Contexto histórico}
+	Esta es una subsección donde hablamos del contexto histórico de nuestro tema. Es importante entender la historia para poder comprender completamente nuestro tema de estudio.
+	
+	\subsubsection{Europa en el siglo XIX}
+	En esta subsección hablamos de Europa durante el siglo XIX. Durante este período, Europa vio muchos cambios políticos, sociales y tecnológicos que sentaron las bases para el mundo moderno.
+	
+	El siglo XIX en Europa estuvo marcado por la Revolución Industrial, el surgimiento de los movimientos nacionalistas, y grandes avances en ciencia y tecnología. Además, las potencias europeas expandieron sus imperios coloniales, lo que tuvo un impacto profundo en la geopolítica global.
+	
+	\subsection{Importancia del estudio}
+	Aquí discutimos por qué es importante estudiar nuestro tema. Puede ser porque tiene relevancia actual, porque hay lagunas en la investigación existente, o simplemente porque es un área de interés personal.
+	
+	\section{Metodología}
+	En esta sección, describimos cómo llevamos a cabo nuestra investigación. Esto incluye los métodos que usamos, las fuentes que consultamos y cualquier otro detalle relevante que pueda interesar a nuestros lectores.
+	
+	\pagebreak
+	\section{Conclusiones}
+	Presenta las conclusiones del trabajo.
+	\pagebreak
+	\printbibliography[heading=bibintoc]
+\end{document}
