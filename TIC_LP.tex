@@ -13,6 +13,8 @@
 \usepackage{titlesec} % Para personalizar los títulos
 \usepackage{fancyhdr} % Para personalizar encabezados y pies de página
 \usepackage{newtxtext}
+\usepackage{listings}
+\usepackage{xcolor}
 
 \pagestyle{fancy}
 \fancyhf{} % Limpia encabezados y pies de página
@@ -44,6 +46,34 @@ urlbordercolor={1 1 0},
 filecolor=blue, 
 pdfborderstyle={/S/U/W 1}]{hyperref}
 
+% Definición de formato para Solidity
+\lstdefinelanguage{Solidity}{
+	keywords={public, private, payable, external, address, modifier, require, if, else, while, for, assembly, switch, case, default, let, contract, uint256, uint8, bool, true, false, function, return, constructor, fallback},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={},
+	ndkeywordstyle=\color{darkgray}\ttfamily,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{purple}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
+}
+
+\lstset{
+	language=Solidity,
+	extendedchars=true,
+	basicstyle=\small\ttfamily,
+	showstringspaces=false,
+	showspaces=false,
+	numbers=left,
+	numberstyle=\tiny,
+	showtabs=false,
+	tabsize=4
+}
+
 % Inicio del documento
 \begin{document}
 	\pagestyle{empty}
@@ -51,16 +81,12 @@ pdfborderstyle={/S/U/W 1}]{hyperref}
 	\begin{titlepage}
 		\centering
 		\vspace*{1.5cm}
-		\includegraphics[width=0.3\textwidth]{unerlogo.png}
-		\linebreak
 		{\fontsize{14}{17}\bfseries Trabajo integrador: Metaverso y Solidity\par}
-		{\small Martín Borgo\par}
-		{\small Leandro Molina\par}
+		{\small Martín Borgo, Leandro Molina\par}
 		{\normalsize Universidad Nacional de Entre Ríos\par}
 		{\normalsize Facultad de Ciencias de la Administración\par}
 		{\normalsize Licenciatura en Sistemas \par}
-		{\small \href{mailto:martinborgo8@gmail.com}{martinborgo8@gmail.com}\par}
-		{\small \href{mailto:LeandroRodrigoMolina@gmail.com}{LeandroRodrigoMolina@gmail.com}\par}
+		{\small \href{mailto:martinborgo8@gmail.com}{martinborgo8@gmail.com}, \href{mailto:LeandroRodrigoMolina@gmail.com}{LeandroRodrigoMolina@gmail.com}\par}
 		
 		% Resumen y palabras clave
 		{\small \textbf{Abstract.} Resumen hasta 200 palabras. \par}
@@ -104,7 +130,7 @@ pdfborderstyle={/S/U/W 1}]{hyperref}
 	Sin embargo, el camino hacia un metaverso completamente desarrollado enfrenta obstáculos significativos, incluyendo desafíos técnicos, éticos y de salud mental, así como cuestiones de interoperabilidad y compatibilidad.\newline
 	En este trabajo, nos centraremos principalmente en explorar el papel del lenguaje de programación Solidity (viendo diferentes aplicaciones del mismo), central para la implementación de los contratos inteligentes y la blockchain, se lo puede considerar dentro del backend del metaverso, dejando de lado la discusión detallada de otros conceptos clave\footnote{Para ver una descripción clara de estos términos véase: \textcite{grandury2022implementacion}}.
 	\section{Desarrollo de trabajo}
-	En este apartado 
+	En esta sección, se llevará a cabo una revisión bibliográfica que abordará la tecnología Blockchain y su aplicación en el Metaverso, así como una subsección dedicada al lenguaje de programación Solidity. Esta última sección será especialmente enfocada debido a la vital importancia que tiene en la creación de contratos inteligentes.
 	\subsection{La Blockchain en el Metaverso}
 	La tecnología blockchain y sus herramientas afines, como los contratos inteligentes, no solo establecen los cimientos de una economía tangible en el metaverso, sino que también tienen el potencial de mejorar significativamente la seguridad y la integridad de los datos. \textcite{huynh2023blockchain} hablan de como la adquisición de datos en el metaverso es algo fundamental, sobre todo en el entrenamiento de inteligencia artificial o algoritmos de aprendizaje automáticos. Para que todo eso sea posible se requiere información útil y auténtica, en este artículo se discute cómo la tecnología blockchain facilita esta tarea. Por un lado, esta tecnología hará que cada uno de los usuarios tengan control sobre su propia información, pudiendo transferir y compartir esta con terceras partes a través de un contrato inteligente y por otro lado al estar toda esta información en la cadena de bloques nos aseguramos que esta mismo es completamente auténtica y totalmente útil.
 	
