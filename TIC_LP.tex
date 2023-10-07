@@ -15,6 +15,12 @@
 \usepackage{newtxtext}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{caption}
+\usepackage{footnote}
+
+\makesavenoteenv{figure}
+% Configuración para las etiquetas de figura
+\captionsetup[figure]{labelformat=empty} % Esto elimina el número de figura y el separador
 
 \pagestyle{fancy}
 \fancyhf{} % Limpia encabezados y pies de página
