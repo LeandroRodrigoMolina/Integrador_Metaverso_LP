@@ -16,6 +16,8 @@
 \usepackage{ragged2e}
 \usepackage{caption}
 \usepackage{footnote}
+\usepackage{lipsum}  % para texto dummy
+\usepackage{parskip} % para que no indente los párrafos
 
 \makesavenoteenv{figure}
 % Configuración para las etiquetas de figura
@@ -54,24 +56,19 @@ pdfborderstyle={/S/U/W 1}]{hyperref}
 
 % Inicio del documento
 \begin{document}
-	\pagestyle{empty}
 	% Carátula
-	\begin{titlepage}
-		\centering
-		\vspace*{1.5cm}
-		{\fontsize{14}{17}\bfseries Solidity en el Metaverso: Un Enfoque Hacia los Contratos Inteligentes y la Blockchain\par}
-		{\small Borgo, Martín Alejandro; Molina, Leandro Rodrigo\par}
-		{\normalsize Universidad Nacional de Entre Ríos\par}
-		{\normalsize Facultad de Ciencias de la Administración\par}
-		{\normalsize Licenciatura en Sistemas \par}
-		{\small \href{mailto:martinborgo8@gmail.com}{martinborgo8@gmail.com}, \href{mailto:LeandroRodrigoMolina@gmail.com}{LeandroRodrigoMolina@gmail.com}\par}
-		
-		% Resumen y palabras clave
-		{\small \justify \begin{quote}\textbf{Abstract.} El Metaverso, se presenta como un conjunto de tecnologías que permite la construcción de mundos virtuales. Donde la tecnología blockchain es uno de los pilares fundamentales, ofreciendo un ecosistema descentralizado y seguro, el cual puede ser expandido en funcionalidades mediante los contratos inteligentes. En este contexto Solidity se ha consolidado como el lenguaje de programación predominante en el desarrollo de contratos inteligentes y aplicaciones descentralizadas dentro de las distintas Blockchain. Sin embargo, a pesar de su amplio uso, presenta problemas relacionados con la seguridad y costos de ejecución. La necesidad de abordar estas limitaciones ha propiciado la creación de lenguajes alternativos, que aspiran a solucionar estas dificultades. Debido a la aparición de cada vez más lenguajes orientados a contratos, es necesario tener en cuenta una serie de principios básicos que todo lenguaje creado para este campo debe seguir. Además los desarrolladores a la hora de seleccionar uno de estos lenguajes deben hacerlo en base a criterios sólidos. Es el objetivo de este artículo presentar tanto las características de diseño de los lenguajes, como también los criterios de selección del lenguaje. \end{quote} \par}
-		{\small \justify \begin{quote} \textbf{Keywords:} Metaverso, Solidity, Contratos inteligentes, Blockchain. \end{quote} \par}
-	\end{titlepage}
-	
+	\centering
+	{\fontsize{14}{17}\bfseries Solidity en el Metaverso: Un Enfoque Hacia los Contratos Inteligentes y la Blockchain\par}
+	{\small Borgo, Martín Alejandro; Molina, Leandro Rodrigo\par}
+	{\normalsize Universidad Nacional de Entre Ríos\par}
+	{\normalsize Facultad de Ciencias de la Administración\par}
+	{\normalsize Licenciatura en Sistemas \par}
+	{\small \href{mailto:martinborgo8@gmail.com}{martinborgo8@gmail.com}, \href{mailto:LeandroRodrigoMolina@gmail.com}{LeandroRodrigoMolina@gmail.com}\par}	
+	% Resumen y palabras clave
+	{\small \justify \begin{quote}\textbf{Abstract.} El Metaverso, se presenta como un conjunto de tecnologías que permite la construcción de mundos virtuales. Donde la tecnología blockchain es uno de los pilares fundamentales, ofreciendo un ecosistema descentralizado y seguro, el cual puede ser expandido en funcionalidades mediante los contratos inteligentes. En este contexto Solidity se ha consolidado como el lenguaje de programación predominante en el desarrollo de contratos inteligentes y aplicaciones descentralizadas dentro de las distintas Blockchain. Sin embargo, a pesar de su amplio uso, presenta problemas relacionados con la seguridad y costos de ejecución. La necesidad de abordar estas limitaciones ha propiciado la creación de lenguajes alternativos, que aspiran a solucionar estas dificultades. Debido a la aparición de cada vez más lenguajes orientados a contratos, es necesario tener en cuenta una serie de principios básicos que todo lenguaje creado para este campo debe seguir. Además los desarrolladores a la hora de seleccionar uno de estos lenguajes deben hacerlo en base a criterios sólidos. Es el objetivo de este artículo presentar tanto las características de diseño de los lenguajes, como también los criterios de selección del lenguaje. \end{quote} \par}
+	{\small \justify \begin{quote} \textbf{Keywords:} Metaverso, Solidity, Contratos inteligentes, Blockchain. \end{quote} \par}
 	%Empezamos a escribir
+	\justifying % Alineación a la izquierda
 	\section{Introducción al Trabajo Integrador de Contenidos (TIC)}
 	El TIC de la cátedra Lenguajes de Programación (LP), tiene como objetivo general relevar información acerca de temas relacionados directa o indirectamente con el contenido de las unidades temáticas del programa de la cátedra; destacándose especialmente que la presentación y defensa del TIC posibilita además la promoción de la materia. Para el logro del mismo, los alumnos deben arribar a conclusiones en base a la temática seleccionada, presentando y exponiendo su trabajo a fin de desarrollar actitudes de autonomía y oralidad; en base a las pautas de elaboración formales que les son requeridas. En el TIC correspondiente al año en curso, se trabajó en la profundización de conceptos acerca del mundo virtual o universo paralelo denominado Metaverso (Metaverse). Se procurará establecer sus orígenes conceptuales, presente y futuro, relaciones con juegos, inteligencia artificial, Internet de las Cosas (IoT), realidad virtual, realidad alternativa y realidad aumentada, dispositivos de acceso, procesos inmersivos y empresas involucradas que están a la vanguardia tecnológica. Asimismo, se intentará establecer cómo estos conceptos se relacionan e integran principalmente con otros, tales como: evolución, principios de diseño, paradigmas y criterios de evaluación de Lenguajes de Programación y por qué los lenguajes C\# y C++, Java, JavaScript, Python, Solidity, Rust, Swift, HTML, CSS, SQL, y TypeScript, entre otros, son los considerados más relevantes para el Metaverso.
 	Asimismo, y a modo introductorio, básico y orientativo, se sugirió al alumnado la revisión de los siguientes recursos: 
@@ -107,7 +104,7 @@ pdfborderstyle={/S/U/W 1}]{hyperref}
 	Actualmente estamos en la etapa de desarrollo, donde se están integrando y desarrollando diferentes tecnologías para la creación del Metaverso. Estas tecnologías se pueden dividir en cinco aspectos:
 
 	\begin{enumerate}
-		\item \textbf{Infraestructura de comunicación y computación:} Se refiere a las bases tecnológicas que hacen posible el Metaverso, principalmente las redes 5G y 6G ofreciendo alta velocidad, baja latencia y conectividad ubicua. Además, el Internet de las Cosas (IoT) es esencial para conectar el Metaverso con el mundo real. La computación en la nube y el Edge Computing son fundamentales para proporcionar la potencia informática necesaria. Lenguajes como \textbf{Python}, \textbf{Go} y \textbf{Elixir} son comúnmente utilizados en la gestión y análisis de redes, la infraestructura de la nube y el análisis de datos en tiempo real.
+		\item \textbf{Infraestructura de comunicación y computación:} Se refiere a las bases tecnológicas que hacen posible el Metaverso, principalmente las redes 5G y 6G ofreciendo alta velocidad, baja latencia y conectividad ubicua. Además, el Internet de las Cosas es esencial para conectar el Metaverso con el mundo real. La computación en la nube y el Edge Computing son fundamentales para proporcionar la potencia informática necesaria. Lenguajes como \textbf{Python}, \textbf{Go} y \textbf{Elixir} son comúnmente utilizados en la gestión y análisis de redes, la infraestructura de la nube y el análisis de datos en tiempo real.
 		\item \textbf{Tecnología de Gestión:} Se centra en cómo se gestionan y mantienen los recursos dentro del Metaverso. Esto incluye la gestión de la energía utilizada por las instalaciones del Metaverso, la asignación y descubrimiento de recursos y la gestión de las interacciones de los usuarios en sesiones. La seguridad y la prevención de ataques también son consideraciones clave en este ámbito, por esa razón lenguajes como \textbf{Rust} y \textbf{C++} son a menudo empleados para la construcción de sistemas de alto rendimiento y de gestión de recursos.
 		\item \textbf{Tecnologías fundamentales:} Son las tecnologías esenciales que respaldan las operaciones y el desarrollo del Metaverso. Estas incluyen la realidad virtual y aumentada, la inteligencia artificial, la visión por computadora y la tecnología blockchain. Estas tecnologías permiten la creación de mundos virtuales y la interacción dentro de ellos. Lenguajes como \textbf{Python} para el desarrollo de IA, \textbf{Solidity} para respaldar contratos inteligentes y transacciones seguras, \textbf{C\#} en el desarrollo de RV y RA, gracias a su integración con Unity, son sólo algunos de los muchos ejemplos existentes.
 		\item \textbf{Conexión de Objetos de Realidad Virtual:} Trata sobre cómo los objetos virtuales en el Metaverso interactúan entre sí y con los usuarios. Esto abarca desde la creación de objetos hasta su interacción y eventual destrucción. Lenguajes como \textbf{JavaScript} a través de librerías como \textbf{WebXR API}, \textbf{WebGPU} o \textbf{TreeJS} desempeñan un papel fundamental en la creación de experiencias VR y AR en la web.
